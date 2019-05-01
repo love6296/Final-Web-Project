@@ -3,7 +3,7 @@
 
 To use this project, follow the guidelines listed below:
 
-1.  You must have Python 3 and Django installed on the computer you will use as the server.
+1.  You must have Python 3 and Django installed on the computer you will use as the server. Also install the module "localflavor" with pip.
 2.  Copy the entire directory, as is, onto the server computer.
 3.  From the .../Final directory (the one that has the manage.py file in it),  open a command prompt and run 'py manage.py runserver' 
     to start the project.
