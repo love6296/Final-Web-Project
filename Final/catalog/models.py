@@ -1,5 +1,6 @@
 from django.db import models
 from django.urls import reverse # Used to generate URLs by reversing the URL patterns
+from localflavor.us.models import USStateField
 import uuid # Required for unique book instance
 
 
@@ -13,11 +14,27 @@ import uuid # Required for unique book instance
         
 class School(models.Model):
     """Model representing an author."""
-
+    NONE = '-'
+    ONE = '1'
+    TWO = '2'
+    THREE = '3'
+    FOUR = '4'
+    DIV_CHOICES = (
+        (NONE, '-'),
+        (ONE, '1'),
+        (TWO, '2'),
+        (THREE, '3'),
+        (FOUR, '4'),
+    )
     school_name = models.CharField(max_length=100)
+    division = models.CharField(
+        max_length=1,
+        choices=DIV_CHOICES,
+        default=NONE,
+    )
     address = models.CharField(max_length=100)
     city = models.CharField(max_length=30)
-    state = models.CharField(max_length=2)
+    state = USStateField(null=True, blank=True)
     zipcode = models.CharField(max_length=7)
     phone = models.CharField(max_length=10)
     
@@ -77,7 +94,7 @@ class Coordinators(models.Model):
     
 
     class Meta:
-        ordering = ['last_name', 'first_name']
+        ordering = ['last_name','first_name']
 
     def get_absolute_url(self):
         """Returns the url to access a particular coordinator instance."""

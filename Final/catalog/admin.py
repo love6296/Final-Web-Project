@@ -30,7 +30,7 @@ class TestScheduleAdmin(admin.ModelAdmin):
     )
     
 class SchoolAdmin(admin.ModelAdmin):
-    list_display = ('school_name', 'address', 'city', 'state','zipcode','phone')
+    list_display = ('school_name', 'division', 'address', 'city', 'state','zipcode','phone')
     
 class CoordinatorsAdmin(admin.ModelAdmin):
     list_display = ('display_school', 'first_name', 'last_name', 'email')
