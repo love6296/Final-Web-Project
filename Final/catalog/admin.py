@@ -18,7 +18,16 @@ class ExamAdmin(admin.ModelAdmin):
     pass
     
 class TestScheduleAdmin(admin.ModelAdmin):
-    list_display = ('student_first', 'student_last', 'display_schools', 'year_in_school', 'exam1')
+    list_display = ('student_first', 'student_last', 'display_schools', 'year_in_school', 'Time_1','Time_2','Time_3')
+    #list_filter = ('student_last','year_in_school')
+    fieldsets = (
+        ('Demographics', {
+            'fields': [('student_first', 'student_last', 'school')]
+        }),
+        ('Test Schedule', {
+            'fields': ('id','Time_1','Time_2','Time_3')
+        }),
+    )
     
 class SchoolAdmin(admin.ModelAdmin):
     list_display = ('school_name', 'address', 'city', 'state','zipcode','phone')
