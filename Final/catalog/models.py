@@ -160,17 +160,17 @@ class TestSchedule(models.Model):
     )
     
     Time_1 = models.CharField(
-        max_length=30,
+        max_length=45,
         choices=PickTuple,
         default='No',
     )
     Time_2 = models.CharField(
-        max_length=30,
+        max_length=45,
         choices=PickTuple,
         default='No',
     )
     Time_3 = models.CharField(
-        max_length=30,
+        max_length=45,
         choices=PickTuple,
         default='No',
     )
@@ -179,6 +179,10 @@ class TestSchedule(models.Model):
 
     class Meta:
         ordering = ['student_last', 'student_first']
+		
+    def get_absolute_url(self):
+        """Returns the url to access a particular coordinator instance."""
+        return reverse('testschedule-detail', args=[str(self.id)])
 
     def __str__(self):
         """String for representing the Model object."""

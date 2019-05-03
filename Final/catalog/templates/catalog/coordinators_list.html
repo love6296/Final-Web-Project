@@ -1,0 +1,17 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <p><font size="14" color="red" face="book antiqua">M</font><font size="5" color="blue" face="book antiqua">urray</font><font size="14" color="red" face="book antiqua">S</font><font size="5" color="blue" face="book antiqua">tate</font><font size="14" color="red" face="book antiqua">C</font><font size="5" color="blue" face="book antiqua">ollege</font></p>
+  <h2>Coordinators List</h2>
+  {% if coordinators_list %}
+  <ul>
+    {% for coordinators in coordinators_list %}
+      <li>
+        <a href="{{ coordinators.get_absolute_url }}">{{ coordinators.first_name }}</a> {{coordinators.last_name}}
+      </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+    <p>There are no coordinators currently registered.</p>
+  {% endif %}       
+{% endblock %}
