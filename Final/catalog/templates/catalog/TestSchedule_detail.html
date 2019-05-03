@@ -1,0 +1,24 @@
+{% extends "base_generic.html" %}
+
+
+
+{% block content %}
+  <p><font size="14" color="red" face="book antiqua">M</font><font size="5" color="blue" face="book antiqua">urray</font><font size="14" color="red" face="book antiqua">S</font><font size="5" color="blue" face="book antiqua">tate</font><font size="14" color="red" face="book antiqua">C</font><font size="5" color="blue" face="book antiqua">ollege</font></p>
+  <h2>Student's Name: {{ testschedule.student_first }} {{ testschedule.student_last }}</h2>
+  <br />
+  <br />
+  <p><strong>School Name:</strong> {{ testschedule.display_schools }}</p>
+  <p><strong>Year:</strong> {{ testschedule.year_in_school }}</p> 
+  <p><strong>Substitute:</strong> {{ testschedule.substitute }}</p>  
+  <p><strong>9:30 Test:</strong> {{ testschedule.Time_1 }}</p>
+  <p><strong>10:30 Test:</strong> {{ testschedule.Time_2 }}</p>  
+  <p><strong>11:30 Test:</strong> {{ testschedule.Time_3 }}</p>  
+  <br />
+  <br />
+  <h3>
+  <li><a href="{{testschedule.get_absolute_url }}\update\">Edit</a></li>
+  <br />
+  <li><a href="{{testschedule.get_absolute_url }}\delete\">Delete</a></li>
+  </h3>
+
+{% endblock %}

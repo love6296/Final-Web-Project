@@ -1,0 +1,24 @@
+{% extends "base_generic.html" %}
+
+
+
+{% block content %}
+  <p><font size="14" color="red" face="book antiqua">M</font><font size="5" color="blue" face="book antiqua">urray</font><font size="14" color="red" face="book antiqua">S</font><font size="5" color="blue" face="book antiqua">tate</font><font size="14" color="red" face="book antiqua">C</font><font size="5" color="blue" face="book antiqua">ollege</font></p>
+  <h2>School Name: {{ school.school_name }}</h2>
+  <br />
+  <br />
+  <p><strong>Address:</strong> {{ school.address }}</p>
+  <p><strong>City:</strong> {{ school.city }}</p> 
+  <p><strong>State:</strong> {{ school.state }}</p>  
+  <p><strong>Zip:</strong> {{ school.zipcode }}</p>
+  <p><strong>Telephone:</strong> {{ school.phone }}</p>  
+  <p><strong>Division:</strong> {{ school.division }}</p>  
+  <br />
+  <br />
+  <h3>
+  <li><a href="{{school.get_absolute_url }}\update\">Edit</a></li>
+  <br />
+  <li><a href="{{school.get_absolute_url }}\delete\">Delete</a></li>
+  </h3>
+
+{% endblock %}

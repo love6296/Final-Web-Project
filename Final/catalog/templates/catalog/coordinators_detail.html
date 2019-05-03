@@ -1,0 +1,20 @@
+{% extends "base_generic.html" %}
+
+
+
+{% block content %}
+  <p><font size="14" color="red" face="book antiqua">M</font><font size="5" color="blue" face="book antiqua">urray</font><font size="14" color="red" face="book antiqua">S</font><font size="5" color="blue" face="book antiqua">tate</font><font size="14" color="red" face="book antiqua">C</font><font size="5" color="blue" face="book antiqua">ollege</font></p>
+  <h2>Coordinator's Name: {{ coordinators.first_name }} {{ coordinators.last_name }}</h2>
+  <br />
+  <br />
+  <p><strong>School name:</strong> {{ coordinators.display_school}}</p>
+  <p><strong>Email:</strong> {{ coordinators.email }}</p> 
+  <br />
+  <br />
+  <h3>
+  <li><a href="{{coordinators.get_absolute_url }}\update\">Edit</a></li>
+  <br />
+  <li><a href="{{coordinators.get_absolute_url }}\delete\">Delete</a></li>
+  </h3>
+
+{% endblock %}

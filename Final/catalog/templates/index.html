@@ -1,0 +1,31 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <p><font size="14" color="red" face="book antiqua">M</font><font size="5" color="blue" face="book antiqua">urray</font><font size="14" color="red" face="book antiqua">S</font><font size="5" color="blue" face="book antiqua">tate</font><font size="14" color="red" face="book antiqua">C</font><font size="5" color="blue" face="book antiqua">ollege</font></p>
+  <h2> Scholastic Registration Home</h2>
+  <p>Welcome to MSC's Scholastic Registration Website, developed for your use by <em>Mike Lovett</em>!</p>
+  <br />
+  <br />
+  <p>Use the navigation bar to the left to:</p>
+  <br />
+  <li>See, and edit, a list of the schools participating</li>
+  <li>See, and edit, a list of the school coordinators</li>
+  <li>See, and edit, a list of testing participants</li>
+  <li>Register a new school</li>
+  <li>Register a new coordinator</li>
+  <li>Register a student for exams</li>
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <h3>Here's where we are now.</h3>
+  <p>Are you already part of our numbers?</p>
+  <ul>
+    <li><strong>Schools already registered:</strong> {{ num_schools }}</li>
+    <li><strong># of Exams being given:</strong> {{ num_tests }}</li>
+    <li><strong>Coordinators already registered:</strong> {{ num_coordinators }}</li>
+    <li><strong>Students already registered for testing:</strong> {{ num_applications }}</li>
+  </ul>
+{% endblock %}

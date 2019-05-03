@@ -1,0 +1,17 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <p><font size="14" color="red" face="book antiqua">M</font><font size="5" color="blue" face="book antiqua">urray</font><font size="14" color="red" face="book antiqua">S</font><font size="5" color="blue" face="book antiqua">tate</font><font size="14" color="red" face="book antiqua">C</font><font size="5" color="blue" face="book antiqua">ollege</font></p>
+  <h2>School List</h2>
+  {% if school_list %}
+  <ul>
+    {% for school in school_list %}
+      <li>
+        <a href="{{ school.get_absolute_url }}">{{ school.school_name }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+    <p>There are no schools currently registered.</p>
+  {% endif %}       
+{% endblock %}

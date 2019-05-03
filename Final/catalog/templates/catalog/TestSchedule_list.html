@@ -1,0 +1,17 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<p><font size="14" color="red" face="book antiqua">M</font><font size="5" color="blue" face="book antiqua">urray</font><font size="14" color="red" face="book antiqua">S</font><font size="5" color="blue" face="book antiqua">tate</font><font size="14" color="red" face="book antiqua">C</font><font size="5" color="blue" face="book antiqua">ollege</font></p>
+  <h2>List of Registered Students</h2>
+  {% if testschedule_list %}
+  <ul>
+    {% for testschedule in testschedule_list %}
+      <li>
+        <a href="{{ testschedule.get_absolute_url }}">{{ testschedule.student_last }}</a> {{testschedule.student_first}}----------{{testschedule.display_schools}}----------{{testschedule.Time_1}}  /  {{testschedule.Time_2}}  /  {{testschedule.Time_3}}
+      </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+    <p>There are no students currently registered.</p>
+  {% endif %}       
+{% endblock %}
